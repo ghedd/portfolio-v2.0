@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, PageProps } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import Image from "../components/image/image"
+import SEO from "../components/seo/seo"
 
-const IndexPage = () => (
+const IndexPage: React.FC<PageProps> = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Hi people</h1>
