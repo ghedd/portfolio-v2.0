@@ -1,17 +1,12 @@
 import { Link } from "gatsby"
 import React from "react"
-
+import HeaderStyles from "./header.module.scss"
 interface HeaderProp {
   siteTitle: string
 }
 
 const Header: React.FC<HeaderProp> = ({ siteTitle = "" }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header className={HeaderStyles.headerStyles}>
     <div
       style={{
         margin: `0 auto`,

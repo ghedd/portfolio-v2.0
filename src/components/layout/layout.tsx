@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../header/header"
-import "../layout.css"
+import LayoutStyles from "./layout.module.scss"
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,6 +35,7 @@ const Layout: React.FC = ({ children }) => {
       >
         <main>{children}</main>
         <footer
+          className={LayoutStyles.layoutStyle}
           style={{
             marginTop: `2rem`,
           }}
