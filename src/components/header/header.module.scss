@@ -1,3 +1,21 @@
-.headerStyles {
-  background-color: blue;
+@import "../../styles/variables";
+
+.headerContainer {
+  background-color: pink;
+  transition: background 300ms ease-in-out;
+  &--blue {
+    background-color: blue;
+    color: #fafafa;
+    transition: background 300ms ease-in;
+  }
+}
+
+.headerTypography {
+  font-family: $headingFont;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  color: $clrPrimary1;
+}
+
+* {
+  box-sizing: border-box;
 }

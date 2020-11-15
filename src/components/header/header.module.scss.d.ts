@@ -1,1 +1,3 @@
-export const headerStyles: string;
+export const headerContainer: string;
+export const headerContainerBlue: string;
+export const headerTypography: string;
