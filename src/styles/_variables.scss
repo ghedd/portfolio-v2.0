@@ -1,3 +1,4 @@
+
 // typography
 $headingFont: "Oswald", sans-serif;
 $contentFont: "Cardo", serif;
@@ -8,3 +9,6 @@ $clrPrimary2: #dfe7e6;
 $clrPrimary3: #0b2832;
 $clrSecondary1: #aed0cb;
 $clrSecondary2: #478196;
+
+//sizing
+$fluidPadding: clamp(1rem, 1vw, 2rem);

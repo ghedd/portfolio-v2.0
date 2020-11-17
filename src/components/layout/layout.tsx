@@ -13,19 +13,9 @@ import Header from "../header/header";
 import LayoutStyles from "./layout.module.scss";
 
 const Layout: React.FC = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header />
       <div
         style={{
           margin: `0 auto`,

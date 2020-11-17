@@ -1,21 +1,23 @@
 @import "../../styles/variables";
 
-.headerContainer {
-  background-color: pink;
-  transition: background 300ms ease-in-out;
-  &--blue {
-    background-color: blue;
-    color: #fafafa;
-    transition: background 300ms ease-in;
-  }
+header {
+  background-color: $clrPrimary3;
 }
-
-.headerTypography {
+.headerContainer {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 0.5rem $fluidPadding;
+}
+.headerBrand {
+  display: flex;
+  justify-content: space-between;
+  max-width: 9rem;
+  max-height: 8rem;
+}
+.headerTypography > * {
   font-family: $headingFont;
-  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  text-decoration: none;
   color: $clrPrimary1;
 }
 
-* {
-  box-sizing: border-box;
-}
