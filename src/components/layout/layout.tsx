@@ -7,7 +7,7 @@
 
 import React from "react";
 // import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby";
+// import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "../header/header";
 import LayoutStyles from "./layout.module.scss";
@@ -16,25 +16,18 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-      <div
+
+      <main className={LayoutStyles.mainContainer}>{children}</main>
+      <footer
+        // className={LayoutStyles}
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          marginTop: `2rem`,
         }}
       >
-        <main className="typographyText">{children}</main>
-        <footer
-          className={LayoutStyles.layoutStyle}
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.com">Gatsby</a>
+      </footer>
     </>
   );
 };

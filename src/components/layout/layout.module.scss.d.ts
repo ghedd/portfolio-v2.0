@@ -1,1 +1,1 @@
-export const layoutStyle: string;
+export const mainContainer: string;

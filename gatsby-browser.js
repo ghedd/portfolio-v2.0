@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 
-import "./src/styles/normalizer.scss";
+import "./src/styles/base/normalizer.scss";
 import "./src/styles/globals.scss";

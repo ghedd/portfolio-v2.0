@@ -9,7 +9,13 @@ const NavBar = () => {
   // change state on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
+      const isScrolled: boolean =
+        // as Gatsby renders component from server,
+        // running 'gatsby build' throws an error because
+        // 'window' is 'undefined'.
+        // the below check helps avoiding such error
+        // visit https://www.gatsbyjs.com/docs/debugging-html-builds/ for more details
+        typeof window !== undefined ? window.scrollY > 10 : false;
       if (isScrolled !== scrolled) {
         setScrolled(!scrolled);
         console.log(scrolled);
@@ -19,7 +25,8 @@ const NavBar = () => {
     document.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      // clean up the event handler when the component unmounts
+      // clean up the event handler when
+      // the component unmounts
       document.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
@@ -27,15 +34,17 @@ const NavBar = () => {
     <div
       className={
         scrolled
-          ? `${NavBarStyles.navBar} `
+          ? `${NavBarStyles.navBar}`
           : `${NavBarStyles.navBar} ${NavBarStyles.navBarTop}`
       }
     >
-      <Brand />
-      <div className={NavBarStyles.navBarMenu}>
-        <span>projects</span>
-        <span>about</span>
-        <span>contact</span>
+      <div className={NavBarStyles.navBarContainer}>
+        <Brand />
+        <div className={NavBarStyles.navBarMenu}>
+          <span>projects</span>
+          <span>about</span>
+          <span>contact</span>
+        </div>
       </div>
     </div>
   );
