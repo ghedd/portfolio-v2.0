@@ -5,23 +5,23 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 type MetaItem = {
-  name: string
-  content: string
-}
+  name: string;
+  content: string;
+};
 
 interface SEOProps {
-  title?: string
-  description?: string
-  url?: string
-  author?: string
-  keywords?: string[]
-  meta?: MetaItem[]
-  image?: string
+  title?: string;
+  description?: string;
+  url?: string;
+  author?: string;
+  keywords?: string[];
+  meta?: MetaItem[];
+  image?: string;
 }
 
 const SEO: React.FC<SEOProps> = props => {
@@ -35,9 +35,9 @@ const SEO: React.FC<SEOProps> = props => {
         }
       }
     }
-  `)
+  `);
 
-  const { siteMetadata } = data.site
+  const { siteMetadata } = data.site;
 
   const {
     title,
@@ -47,11 +47,11 @@ const SEO: React.FC<SEOProps> = props => {
     meta = [],
     // keywords = [],
     // image,
-  } = siteMetadata
-  const siteTitle = props.title || title
-  const siteDescription = props.description || description
-  const siteUrl = props.url || url
-  const siteAuthor = props.author || author
+  } = siteMetadata;
+  const siteTitle = props.title || title;
+  const siteDescription = props.description || description;
+  const siteUrl = props.url || url;
+  const siteAuthor = props.author || author;
   // const siteImage = props.image || image
   // const siteKeywords = [...keywords, props.keywords].join(",")
   const metaData = [
@@ -111,7 +111,7 @@ const SEO: React.FC<SEOProps> = props => {
       name: "keywords",
       // content: siteKeywords,
     },
-  ].concat(meta)
+  ].concat(meta);
 
   const linkData = [
     {
@@ -122,7 +122,7 @@ const SEO: React.FC<SEOProps> = props => {
       rel: "apple-touch-icon",
       href: "icons/apple-touch-icon.png",
     },
-  ]
+  ];
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
@@ -131,9 +131,9 @@ const SEO: React.FC<SEOProps> = props => {
       meta={metaData}
       link={linkData}
     />
-  )
-}
+  );
+};
 
 // export { SEO };
 
-export default SEO
+export default SEO;
