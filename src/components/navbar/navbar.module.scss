@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     @media only screen and (min-width: 960px) {
-      width: clamp(45vw, 2.5rem, 40vw);
+      width: calc(30rem + 3vw);
     }
   }
 
