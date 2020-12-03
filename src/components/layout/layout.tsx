@@ -10,20 +10,16 @@ import React from "react";
 // import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "../header/header";
+// import HeroSection from "../hero/hero";
 import LayoutStyles from "./layout.module.scss";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-
+      {/* <HeroSection /> */}
       <main className={LayoutStyles.mainContainer}>{children}</main>
-      <footer
-        // className={LayoutStyles}
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
+      <footer className={LayoutStyles.mainContainer}>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>

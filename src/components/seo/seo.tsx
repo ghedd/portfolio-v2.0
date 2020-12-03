@@ -48,10 +48,10 @@ const SEO: React.FC<SEOProps> = props => {
     // keywords = [],
     // image,
   } = siteMetadata;
-  const siteTitle = props.title || title;
-  const siteDescription = props.description || description;
-  const siteUrl = props.url || url;
-  const siteAuthor = props.author || author;
+  const pageTitle: string = props.title || title;
+  const siteDescription: string = props.description || description;
+  const siteUrl: string = props.url || url;
+  const siteAuthor: string = props.author || author;
   // const siteImage = props.image || image
   // const siteKeywords = [...keywords, props.keywords].join(",")
   const metaData = [
@@ -77,7 +77,7 @@ const SEO: React.FC<SEOProps> = props => {
     },
     {
       name: "og:title",
-      content: siteTitle,
+      content: pageTitle,
     },
     {
       name: "og:description",
@@ -97,7 +97,7 @@ const SEO: React.FC<SEOProps> = props => {
     },
     {
       name: "twitter:title",
-      content: siteTitle,
+      content: pageTitle,
     },
     {
       name: "twitter:description",
@@ -126,8 +126,8 @@ const SEO: React.FC<SEOProps> = props => {
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
-      title={siteTitle}
-      titleTemplate={`%s | ${siteTitle}`}
+      title={pageTitle}
+      titleTemplate={`${pageTitle} | ${title} `}
       meta={metaData}
       link={linkData}
     />

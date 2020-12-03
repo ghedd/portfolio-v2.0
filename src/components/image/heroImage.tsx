@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
@@ -13,12 +13,12 @@ import Img from "gatsby-image";
  * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-const Image = () => {
+const HeroImage: FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      placeholderImage: file(relativePath: { eq: "Hero.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -30,7 +30,14 @@ const Image = () => {
     return <div>Picture not found</div>;
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return (
+    <>
+      <Img
+        fluid={data.placeholderImage.childImageSharp.fluid}
+        imgStyle={{ height: "75%", objectPosition: "center bottom" }}
+      />
+    </>
+  );
 };
 
-export default Image;
+export default HeroImage;

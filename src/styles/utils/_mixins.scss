@@ -1,0 +1,22 @@
+//typography
+@import "./variables";
+
+@mixin contentTypography {
+  font-family: $contentFont;
+  font-weight: 400;
+}
+
+@mixin navTypography {
+  font-family: $headingFont;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $clrPrimary2;
+}
+
+// container
+@mixin contentWrapper {
+  width: calc(100vw - 0.5rem);
+  max-width: 1600px;
+  margin: 0 auto;
+}

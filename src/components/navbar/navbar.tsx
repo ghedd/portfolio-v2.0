@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React, { useState, useEffect } from "react";
 import Brand from "../brand/brand";
 
@@ -35,15 +36,19 @@ const NavBar = () => {
       className={
         scrolled
           ? `${NavBarStyles.navBar}`
-          : `${NavBarStyles.navBar} ${NavBarStyles.navBarTop}`
+          : `${NavBarStyles.navBar} ${NavBarStyles.navBarUnscrolled}`
       }
     >
       <div className={NavBarStyles.navBarContainer}>
         <Brand />
-        <div className={NavBarStyles.navBarMenu}>
-          <span>projects</span>
-          <span>about</span>
-          <span>contact</span>
+        <div
+          className={`
+          ${NavBarStyles.navBarMenu} ${NavBarStyles.navBarTypography}
+          `}
+        >
+          <a href="/#projects">projects</a>
+          <a href="/#about">about</a>
+          <a href="/#contact">contact</a>
         </div>
       </div>
     </div>

@@ -1,3 +1,8 @@
-.brandResponsive > * {
+.brandResponsive {
   max-width: 200px;
+  &--mobile {
+    svg {
+      width: clamp(40px, 1vw, 50px);
+    }
+  }
 }

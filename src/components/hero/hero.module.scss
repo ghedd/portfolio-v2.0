@@ -1,0 +1,43 @@
+@import "../../styles/utils/variables";
+@import "../../styles/utils/mixins";
+.heroSection {
+  // background-color: yellow;
+  background-color: $clrPrimary3;
+  // margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.heroSection {
+  // @include contentWrapper;
+  min-height: 400px;
+  height: 100vh;
+  @media only screen and (min-width: 960px) {
+    background: url("./bgr_hero.svg");
+    background-position: left ;
+    background-size: cover;
+    grid-template-columns: 1fr 1fr;
+    &__text {
+      grid-column: span -1/1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.heroImage {
+  filter: grayscale(60%);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 75%;
+    transform: translate(-1rem, 0.8rem);
+    border: 2px solid $clrPrimary1;
+  }
+}

@@ -8,7 +8,9 @@ const Brand: React.FC = () => {
   const { width } = useWindowSize();
   if (width < 800) {
     return (
-      <div>
+      <div
+        className={`${BrandStyles.brandResponsive} ${BrandStyles.brandResponsiveMobile}`}
+      >
         <Link to="/">
           <MyBrandMobile />
         </Link>
@@ -16,7 +18,7 @@ const Brand: React.FC = () => {
     );
   }
   return (
-    <div>
+    <div className={BrandStyles.brandResponsive}>
       <Link to="/">
         <MyBrand />
       </Link>

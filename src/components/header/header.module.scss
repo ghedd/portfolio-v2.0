@@ -1,13 +1,15 @@
 @import "../../styles/utils/variables";
 
 header {
-  background-color: $clrPrimary3;
+  // background-color: $clrPrimary3;
   // background-color: pink;
-  position: relative;
-  // width: 100%;
+  // position: relative;
+  position: fixed;
+  width: 100%;
   // max-width: 100vw;
+  z-index: 1;
 
-  height: 10rem;
+  height: 5rem;
   margin: 0 auto;
   margin-bottom: 2rem;
 }
@@ -15,7 +17,7 @@ header {
   margin: 0 auto;
   width: 100%;
   max-width: 1600px;
-  padding: 0.5rem $paddingFluid;
+  // padding: 0.5rem $paddingFluid;
 }
 .headerBrand {
   display: flex;
